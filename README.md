@@ -55,22 +55,12 @@ Instructions:
 
 That’s it! In the desired location, you will now have the following:
 
-blind.py
-   
-   program file
+blind.py (program file)
 
-ORIGINAL_DIR
-  
-  This is the folder of downloaded PDF applications with the original names
+ORIGINAL_DIR (This is the folder of downloaded PDF applications with the original names)
 
-output.txt
-  
-  This is the log of what happened when the program was run.
+output.txt (This is the log of what happened when the program was run)
 
-blinded.csv
-  
-  This is a csv file that contains the matching information between original filenames and blinded filenames. You can save this as an excel spreadsheet!
+blinded.csv (This is a csv file that contains the matching information between original filenames and blinded filenames. You can save this as an excel spreadsheet!)
 
-BLINDED_DIR
-  
-  This will be a folder (named whatever you name it in step 8b. above) that contains all the PDF applications with blinded filenames.
+BLINDED_DIR (This will be a folder (named whatever you name it in step 8b. above) that contains all the PDF applications with blinded filenames.)
