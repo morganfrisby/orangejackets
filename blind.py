@@ -1,8 +1,8 @@
 ################################################################################
-#####	Creator: Morgan Frisby											   #####
+#####	Author: Morgan Frisby											   #####
 #####	User: 	 Angela Kang											   #####
 #####	Purpose: Assist in the blinding process of OJ applications		   #####
-#####	Date: 	 February 10, 2019										   #####
+#####	Date: 	 February 17, 2019										   #####
 ################################################################################
 
 
@@ -10,6 +10,7 @@ import os
 from shutil import copyfile
 from sys import exit
 from operator import itemgetter
+import csv
 
 ORIGINAL_DIR = "test_files"
 BLINDED_DIR  = "testing"
@@ -57,7 +58,6 @@ class application_blinding:
 		Parses the files in input_folder alphabetically, renames them based on 
 		convention MCB_<index_order> and copies the renamed files to output_folder
 		"""
-		output_dir = {}
 		
 		inputPath = os.path.join(os.getcwd(), input_folder)
 		outputPath = os.path.join(os.getcwd(), output_folder)
@@ -65,6 +65,7 @@ class application_blinding:
 		inputFiles = os.listdir(inputPath)
 
 		index = 1
+		output_dir = {}
 		for filename in sorted(inputFiles, key=itemgetter(0)):
 
 			if not filename.startswith('.'):
@@ -87,11 +88,18 @@ class application_blinding:
 				    exit(1)
 
 				print("\n File %s successfully copied as %s \n" % (filename, renamed))
+				
+				# add the [original filename: blinded filename] pair to dictionary
 				output_dir[filename]=renamed
 				
 				index += 1
 		
 		print("mapping is ",output_dir)
+		
+		with open('blinded.csv', 'w') as output:
+			writer = csv.writer(output)
+			for orig, blind in output_dir.items():
+				writer.writerow([orig, blind])
 
 
 
