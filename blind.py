@@ -11,6 +11,8 @@ from shutil import copyfile
 from sys import exit
 from operator import itemgetter
 
+global ORIGINAL_DIR = "test_files"
+global BLINDED_DIR  = "testing"
 
 class application_blinding:
 
@@ -94,12 +96,11 @@ class application_blinding:
 if __name__ == '__main__':
 
 	# creates a folder in the current working directory named "testing"
-	application_blinding.create_folder("testing")
+    application_blinding.create_folder(BLINDED_DIR)
 
 	# removes the folder from the current working directory named "testing"
 	# application_blinding.remove_folder("testing")
 
 	# does the filename blinding and copies the blinded files to new folder
-	application_blinding.copy_files("test_files", "testing")
-
+    application_blinding.copy_files(ORIGINAL_DIR, BLINDED_DIR)
 
