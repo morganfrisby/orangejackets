@@ -14,11 +14,11 @@ This program provides a quick and easy solution to this otherwise-time-intensive
 
 Notes:
 
-If you want the ordering based on something else (such as timestamp), I can play with that
-The original folder should be downloaded only once, after all submissions are in the folder
-The output folder should not already be created
-This relies on files not having the same original names
-This does not require the applicants to have correctly followed your naming convention
+- If you want the ordering based on something else (such as timestamp), I can play with that
+- The original folder should be downloaded only once, after all submissions are in the folder
+- The output folder should not already be created
+- This relies on files not having the same original names
+- This does not require the applicants to have correctly followed your naming convention
 
 Further improvements:
 
@@ -56,16 +56,21 @@ Instructions:
 That’s it! In the desired location, you will now have the following:
 
 blind.py
-  The program file
+   
+   program file
 
 ORIGINAL_DIR
+  
   This is the folder of downloaded PDF applications with the original names
 
 output.txt
+  
   This is the log of what happened when the program was run.
 
 blinded.csv
+  
   This is a csv file that contains the matching information between original filenames and blinded filenames. You can save this as an excel spreadsheet!
 
 BLINDED_DIR
+  
   This will be a folder (named whatever you name it in step 8b. above) that contains all the PDF applications with blinded filenames.
