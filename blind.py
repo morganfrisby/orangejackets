@@ -9,19 +9,16 @@
 import os
 from shutil import copyfile
 from sys import exit
-
-
-# global variable that sets the cwd to the home directory's desktop
-PATH = "/Users/morganfrisby/Desktop/"
+from operator import itemgetter
 
 
 class application_blinding:
 
 	def create_folder(folder_name):
 		"""
-		Creates a new folder in the global variable specified PATH
+		Creates a new folder in the current working directory
 		"""
-		path = PATH
+		path = os.path.join(os.getcwd(), folder_name)
 
 		try:
 			if not os.path.exists(folder_name):
@@ -37,9 +34,9 @@ class application_blinding:
 
 	def remove_folder(folder_name):
 		"""
-		Removes the folder from the global variable specified PATH
+		Removes the folder from the current working directory
 		"""
-		path = PATH
+		path = os.getcwd()
 
 		try: 
 			if not os.path.exists(folder_name):
@@ -58,18 +55,20 @@ class application_blinding:
 		Parses the files in input_folder alphabetically, renames them based on 
 		convention MCB_<index_order> and copies the renamed files to output_folder
 		"""
-		inputPath = PATH+input_folder+"/"
-		outputPath = PATH+output_folder+"/"
+		inputPath = os.path.join(os.getcwd(), input_folder)
+		outputPath = os.path.join(os.getcwd(), output_folder)
+
+		inputFiles = os.listdir(inputPath)
 
 		index = 1
-		for filename in (os.listdir(inputPath)):
+		for filename in sorted(inputFiles, key=itemgetter(0)):
 
 			if not filename.startswith('.'):
 
 				renamed = "MCB_" + str(index)
 
-				source = inputPath+filename
-				target = outputPath+renamed
+				source = os.path.join(inputPath, filename)
+				target = os.path.join(outputPath, renamed)
 
 				# adding exception handling
 				try:
@@ -83,7 +82,7 @@ class application_blinding:
 				    print("Unexpected error:", sys.exc_info())
 				    exit(1)
 
-				print("\n File %s successfully copied! \n" % filename)
+				print("\n File %s successfully copied as %s \n" % (filename, renamed))
 
 				index += 1
 
@@ -93,9 +92,6 @@ class application_blinding:
 
 # this is the driver code	
 if __name__ == '__main__':
-
-	# current_path = os.getcwd()
-	# print("The current working directory is: %s" % current_path)
 
 	# creates a folder in the current working directory named "testing"
 	application_blinding.create_folder("testing")
