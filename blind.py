@@ -11,8 +11,8 @@ from shutil import copyfile
 from sys import exit
 from operator import itemgetter
 
-global ORIGINAL_DIR = "test_files"
-global BLINDED_DIR  = "testing"
+ORIGINAL_DIR = "test_files"
+BLINDED_DIR  = "testing"
 
 class application_blinding:
 
@@ -57,6 +57,8 @@ class application_blinding:
 		Parses the files in input_folder alphabetically, renames them based on 
 		convention MCB_<index_order> and copies the renamed files to output_folder
 		"""
+		output_dir = {}
+		
 		inputPath = os.path.join(os.getcwd(), input_folder)
 		outputPath = os.path.join(os.getcwd(), output_folder)
 
@@ -85,9 +87,11 @@ class application_blinding:
 				    exit(1)
 
 				print("\n File %s successfully copied as %s \n" % (filename, renamed))
-
+				output_dir[filename]=renamed
+				
 				index += 1
-
+		
+		print("mapping is ",output_dir)
 
 
 
