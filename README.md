@@ -50,6 +50,8 @@ After each app is read by the membership committee members, there’s a Google F
 9. Type:
 
     `cd {desired location}` 		    [return]
+    
+    
     `python3 blind.py > output.txt` 	[return]
 
 
