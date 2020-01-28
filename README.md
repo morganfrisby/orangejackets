@@ -1,29 +1,28 @@
-# orangejackets
-Application binding program for the MCB scholarship application SP 2019
+# OJ Application Binding
+This program provides an easy method for performing application binding for the MCB scholarship application.
 
 
-Relevant background information:
+### Relevant background information:
 
-The Orange Jackets (OJ) organization requires application blinding in their application process in order to mitigate potential sources of bias. Prospective scholarship recipients submit their application through a Google Form online, which is hosted by a single OJ member (Angela Kang). Applicants upload a PDF copy of their application through this form, which will have “LastnameFirstname_MCB” as the naming convention (Note: MCB is the name of the scholarship they are applying for). The documents themselves do not contain any identifiers, only the names of the files. The Google Form will create a subfolder containing all PDF files submitted via this form. The application deadline is on February 22, 2019 and the Google Form will close at 5:00pm.
+The Orange Jackets (OJ) organization requires application blinding in their application process in order to mitigate potential sources of bias. Prospective scholarship recipients submit their application through a Google Form online, which is hosted by a single OJ member. Applicants upload a PDF copy of their application through this form, which will have the naming convention “LastnameFirstname_MCB” (Note: MCB is the name of the scholarship they are applying for). The documents themselves do not contain any identifiers, only the names of the files. The Google Form will create a subfolder containing all PDF files submitted via this form. The Google form closes at the application deadline, at which point the folder of PDFs can be downloaded and this program can be run.
 
 
-#### Solution:
+### Solution:
 
-This program provides a quick and easy solution to this otherwise-time-intensive process. The program parses the PDFs from the original folder, blinds each name to be of the naming convention “MCB_<index>”, adds the blinded PDFs to a new folder, and creates a csv file with the relationships between original and blinded filenames. The indices start at 1 and correspond to the ascending alphanumeric ordering of the original filenames. 
+This program provides a relatively quick and easy solution to this otherwise-time-intensive process. The program parses the PDFs from the original folder, blinds each name to be of the naming convention “MCB_<index>”, adds the blinded PDFs to a new folder, and creates a csv file with the relationships between original and blinded filenames. The indices start at 1 and correspond to the ascending alphanumeric ordering of the original filenames.
 
 
 #### Notes:
 
-- If you want the ordering based on something else (such as timestamp), I can play with that
-- The original folder should be downloaded only once, after all submissions are in the folder
-- The output folder should not already be created
-- This relies on files not having the same original names
-- This does not require the applicants to have correctly followed your naming convention
+- The original folder should be downloaded only once, after all submissions are in the folder.
+- The output folder should not already be created.
+- This assumes that no application files have the same name.
+- This does not require the applicants to have correctly followed your naming convention, as the sorting is alphanumeric.
+
 
 #### Further improvements:
 
-After each app is read by the membership committee members, there’s a Google Form they submit saying “I graded application ‘MCB_23’ and gave them a score of <score>.” NG has running excel sheet with the blinded applications they scored and the scores they gave them. She then sorts by number and adds column by names and identify what goes with what. 
-→ Could I make this easier?
+After each app is read by the membership committee members, there’s a Google Form they submit saying “I graded application ‘MCB_23’ and gave them a score of <score>.” The OJ member in charge of handling the scholarship applications has running excel sheet with the blinded applications and the scores they each received. She then sorts the blinded applications by score and has to check the csv file to match the blinded application name back to the original applicant's name to reveal who won the scholarship. A further improvement could be streamlining this process to remove that manual work.
 
 
 ## Instructions:
