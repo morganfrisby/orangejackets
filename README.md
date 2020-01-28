@@ -26,41 +26,39 @@ After each app is read by the membership committee members, there’s a Google F
 → Could I make this easier?
 
 
-Instructions:
+## Instructions:
 
-1. Download python3
+1. Download [python3](https://www.python.org/downloads/). To confirm this was done correctly, typing `python3 --version` in Terminal should output the expected version of python installed, e.g. `Python 3.6.8`.
 
-2. Go to my GitHub repository
+2. Go to [my GitHub repository](https://github.com/morganfrisby/orangejackets), click on the file `blind.py` and download it to your laptop.
 
-3. Download the program file (blind.py) to your laptop
+3. Move the file from your Downloads folder to the desired location (Desktop, Downloads, etc.)
 
-4. Move the file from your Downloads to desired location (Desktop, Downloads, etc.)
+4. From Google Drive, or wherever they are, download the folder containing all the application submission PDF files.
 
-5. Download the application submission folder containing all the PDFs (from Google Drive)
+5. Move that folder from your Downloads to the same desired location from step 3 (Desktop, Downloads, etc.)
 
-6. Move that folder from your Downloads to same desired location (Desktop, Downloads, etc.)
+6. Open the file `blind.py`.
 
-7. Open the file blind.py
-
-8. At the top of the file, change the global variables so that “test_files” is the name of the downloaded folder with the original PDFs and “testing” is the name you want for the folder with the blinded PDFs:
+7. At the top of the file, change the global variables so that “test_files” is the name of the downloaded folder with the original PDFs and “testing” is the name you want for the folder with the blinded PDFs:
     a. ORIGINAL_DIR = "test_files"
     b. BLINDED_DIR  = "testing"
 
-9. Open Command Prompt
+8. Open Terminal (macs) or Command Prompt (windows).
 
-10. Type: 
-    cd (desired location) 		[return]
-    python3 blind.py > output.txt 	[return]
+9. Type: 
+    `cd {desired location}` 		    [return]
+    `python3 blind.py > output.txt` 	[return]
 
 
 That’s it! In the desired location, you will now have the following:
 
-blind.py (program file)
+`blind.py` (program file)
 
-ORIGINAL_DIR (This is the folder of downloaded PDF applications with the original names)
+`ORIGINAL_DIR` (This is the folder of downloaded PDF applications with the original names.)
 
-output.txt (This is the log of what happened when the program was run)
+`output.txt` (This is the log of what happened when the program was run.)
 
-blinded.csv (This is a csv file that contains the matching information between original filenames and blinded filenames. You can save this as an excel spreadsheet!)
+`blinded.csv` (This is a csv file that contains the matching information between original filenames and blinded filenames. You can save this as an excel spreadsheet!)
 
-BLINDED_DIR (This will be a folder (named whatever you name it in step 8b. above) that contains all the PDF applications with blinded filenames.)
+`BLINDED_DIR` (This will be a folder (named whatever you name it in step 8b. above) that contains all the PDF applications with blinded filenames.)
