@@ -1,9 +1,9 @@
-#######################################################################
-#####  Author:  Morgan Frisby									  #####
-#####  User: 	Angela Kang									      #####
-#####  Purpose: Assist in the blinding process of OJ applications #####
-#####  Date: 	February 17, 2019								  #####
-#######################################################################
+###############################################################
+#  Author:  Morgan Frisby
+#  User: 	Angela Kang
+#  Purpose: Assist in the blinding process of OJ applications
+#  Date: 	February 17, 2019
+###############################################################
 
 
 import os
